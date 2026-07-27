@@ -142,7 +142,7 @@ function render(){
  document.getElementById('cbody').innerHTML=cur.campaigns.map(c=>{
   const badge=c.status==='ENABLED'?'<span class="b b-on">Активна</span>':'<span class="b b-off">Пауза</span>';
   const served=c.cost>0||c.impr>0;
-  return '<tr class="'+(served?'':'muted')+'"><td class="l">'+esc(c.name)+'</td><td>'+badge+'</td><td class="n">'+fnum(c.impr)+'</td><td class="n">'+fnum(c.clk)+'</td><td class="n">'+ctr(c.impr,c.clk).toFixed(1)+'%</td><td class="n">'+cpc(c.cost,c.clk).toFixed(1)+'</td><td class="n strong">'+fnum(c.cost)+'</td><td class="n">'+Math.round(c.conv)+'</td></tr>';
+  return '<tr class="'+(served?'':'muted')+'"><td class="l">'+esc(c.name)+'</td><td>'+badge+'</td><td class="n">'+fnum(c.impr)+'</td><td class="n">'+fnum(c.clk)+'</td><td class="n">'+ctr(c.impr,c.clk).toFixed(1)+'%</td><td class="n">'+cpc(c.cost,c.clk).toFixed(1)+'</td><td class="n strong">'+fnum(c.cost)+'</td><td class="n">'+Math.round(c.conv)+'</td>'+ga4cells(cur,c.name)+'</tr>';
  }).join('')||'<tr><td colspan="8" style="text-align:center;color:#aab2bd;padding:24px">Немає даних за період</td></tr>';
  const opts=['<option value="">Усі кампанії</option>'].concat([...new Set(cur.campaigns.map(c=>c.name))].sort().map(n=>'<option value="'+esc(n)+'">'+esc(n)+'</option>'));
  const keep=fcamp.value;fcamp.innerHTML=opts.join('');if([...fcamp.options].some(o=>o.value===keep))fcamp.value=keep;
