@@ -85,8 +85,17 @@ function draw(){
 [q,fst,fmt,fk,fi,fcl].forEach(el=>el.addEventListener('input',draw));
 document.querySelectorAll('th').forEach(th=>th.onclick=()=>{const k=+th.dataset.k;sd=(sk===k&&sd==='desc')?'asc':'desc';sk=k;draw();});
 
+document.body.insertAdjacentHTML('beforeend',`<div id="modal"><div class="mbox">
+<h3>Коментар до запиту</h3><div class="qs" id="mq"></div>
+<div id="mlist"></div>
+<div style="margin-top:12px"><textarea id="mta" placeholder="Ваш коментар: чому цей запит підходить / не підходить, що робити…"></textarea>
+<button class="mbtn" id="msend">Опублікувати на GitHub</button>
+<button class="mbtn sec" id="mclose">Закрити</button></div>
+<div class="qs" style="margin-top:10px">Коментар публікується як GitHub Issue — видно всім. Потрібен безкоштовний акаунт GitHub.</div>
+</div></div>`);
 const REPO='RomanLetsyuk/rodolit-report';
 let CM={};
+window.CM=CM;
 async function loadC(){
  try{
   const r=await fetch('https://api.github.com/repos/'+REPO+'/issues?labels=query-comment&state=all&per_page=100');
@@ -117,12 +126,4 @@ document.getElementById('mclose').onclick=()=>document.getElementById('modal').c
 document.getElementById('modal').onclick=(e)=>{if(e.target.id==='modal')document.getElementById('modal').classList.remove('on');};
 draw(); loadC();
 </script>
-<div id="modal"><div class="mbox">
-<h3>Коментар до запиту</h3><div class="qs" id="mq"></div>
-<div id="mlist"></div>
-<div style="margin-top:12px"><textarea id="mta" placeholder="Ваш коментар: чому цей запит підходить / не підходить, що робити…"></textarea>
-<button class="mbtn" id="msend">Опублікувати на GitHub</button>
-<button class="mbtn sec" id="mclose">Закрити</button></div>
-<div class="qs" style="margin-top:10px">Коментар публікується як GitHub Issue — видно всім. Потрібен безкоштовний акаунт GitHub.</div>
-</div></div>
 </div></body></html>
