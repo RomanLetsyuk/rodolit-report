@@ -6,12 +6,12 @@ h1{font-size:27px;font-weight:800;margin:6px 0 4px}.sub{color:#5c6672;font-size:
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:16px 0}
 .card{background:#fff;border:1px solid #e6e9ee;border-radius:12px;padding:14px 16px}
 .card .k{font-size:11px;color:#7a8390;text-transform:uppercase;letter-spacing:.06em;font-weight:700}.card .v{font-size:22px;font-weight:800;margin-top:4px}
-.filters{display:flex;flex-wrap:wrap;gap:9px;align-items:center;background:#fff;border:1px solid #e6e9ee;border-radius:12px;padding:12px 14px;margin-bottom:12px;position:sticky;top:0;z-index:5}
+.filters{display:flex;flex-wrap:wrap;gap:9px;align-items:center;background:#fff;border:1px solid #e6e9ee;border-radius:12px;padding:12px 14px;margin-bottom:12px;position:sticky;top:0;z-index:30}
 .filters input,.filters select{font:inherit;font-size:14px;padding:8px 11px;border:1px solid #d7dce2;border-radius:8px}
 .filters input[type=search]{min-width:200px;flex:1}
 .filters .cnt{margin-left:auto;font-size:13px;color:#7a8390;font-weight:700}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e6e9ee;border-radius:12px;overflow:hidden;font-size:12.5px}
-th{background:#f0f2f5;text-align:right;padding:9px;font-size:10.5px;text-transform:uppercase;color:#5c6672;font-weight:700;white-space:nowrap;cursor:pointer;user-select:none;position:sticky;top:62px}
+th{background:#f0f2f5;text-align:right;padding:9px;font-size:10.5px;text-transform:uppercase;color:#5c6672;font-weight:700;white-space:nowrap;cursor:pointer;user-select:none;position:sticky;top:62px;z-index:20;box-shadow:inset 0 -1px 0 #dfe3e8}
 th.l,td.l{text-align:left}th:hover{color:#0b7a5b}
 td{padding:7px 9px;border-top:1px solid #eef1f4;text-align:right;font-variant-numeric:tabular-nums}
 tr:hover td{background:#fafbfc}
@@ -124,6 +124,12 @@ function openC(q){
 }
 document.getElementById('mclose').onclick=()=>document.getElementById('modal').classList.remove('on');
 document.getElementById('modal').onclick=(e)=>{if(e.target.id==='modal')document.getElementById('modal').classList.remove('on');};
-draw(); loadC();
+function fixSticky(){
+ const f=document.querySelector('.filters'); if(!f)return;
+ const t=Math.round(f.getBoundingClientRect().height)+8;
+ document.querySelectorAll('thead th').forEach(x=>x.style.top=t+'px');
+}
+fixSticky(); window.addEventListener('resize',fixSticky);
+draw(); loadC(); setTimeout(fixSticky,50);
 </script>
 </div></body></html>
