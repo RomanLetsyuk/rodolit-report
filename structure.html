@@ -1,84 +1,120 @@
 <!DOCTYPE html><html lang="uk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Rodolit — структура кампаній вересень</title><style>
+<title>Rodolit — структура і бюджет вересня</title><style>
 *{box-sizing:border-box;margin:0;padding:0}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Arial,sans-serif;background:#f4f5f7;color:#1a1d21;line-height:1.6;padding:32px 20px}
 .wrap{max-width:1200px;margin:0 auto}.eyebrow{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#0b7a5b;font-weight:700}
 h1{font-size:29px;font-weight:800;margin:6px 0 4px;letter-spacing:-.02em}.sub{color:#5c6672;font-size:15px;margin-bottom:10px}
 h2{font-size:19px;font-weight:750;margin:32px 0 12px;display:flex;align-items:center;gap:10px}h2::before{content:"";width:4px;height:19px;background:#0b7a5b;border-radius:3px}
-h3{font-size:16px;font-weight:750;margin:20px 0 8px}
 table{width:100%;border-collapse:collapse;background:#fff;border:1px solid #e6e9ee;border-radius:12px;overflow:hidden;font-size:13.5px}
 th{background:#f0f2f5;text-align:right;padding:10px;font-size:11px;text-transform:uppercase;color:#5c6672;font-weight:700;white-space:nowrap}
 th.l,td.l{text-align:left}td{padding:10px;border-top:1px solid #eef1f4;text-align:right;font-variant-numeric:tabular-nums;vertical-align:top}
-tr.tot td{background:#f7faf9;border-top:2px solid #0b7a5b}
-.sm{font-size:11.5px;color:#8a929c;font-weight:400}
+tr.tot td{background:#f7faf9;border-top:2px solid #0b7a5b}.sm{font-size:11.5px;color:#8a929c;font-weight:400}
 .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin:14px 0}
 .card{background:#fff;border:1px solid #e6e9ee;border-radius:12px;padding:14px 16px}
 .card .k{font-size:11px;color:#7a8390;text-transform:uppercase;letter-spacing:.06em;font-weight:700}.card .v{font-size:22px;font-weight:800;margin-top:3px}
 .note{background:#fff8e6;border:1px solid #f0d98c;border-radius:10px;padding:14px 17px;margin:14px 0;font-size:14px;color:#6b5518}
 .warn{background:#fdeeea;border-color:#f0b8ac;color:#8a2e19}.ok{background:#e9f7f1;border-color:#a8ddc7;color:#0b5c45}
+.tabs{display:flex;gap:8px;margin:16px 0 6px;flex-wrap:wrap}
+.tb{font:inherit;font-size:14px;font-weight:700;padding:10px 18px;border:1px solid #d7dce2;border-radius:10px;background:#fff;color:#38414c;cursor:pointer}
+.tb.act{background:#0b7a5b;border-color:#0b7a5b;color:#fff}.sec{display:none}.sec.on{display:block}
 .scroll{overflow-x:auto}ul{margin:8px 0 8px 20px}li{margin:4px 0}
-.vbox{background:#fff;border:1px solid #e6e9ee;border-radius:14px;padding:18px 20px;margin-bottom:18px}
-.vhead{display:flex;gap:14px;align-items:baseline;flex-wrap:wrap;margin-bottom:4px}
-.vhead h3{margin:0;font-size:18px}.badge{background:#0b7a5b;color:#fff;font-size:12px;font-weight:700;padding:2px 10px;border-radius:20px}
 </style></head><body><div class="wrap">
 <div class="eyebrow">Google Ads · Rodolit · 406-165-1760</div>
-<h1>Структура кампаній на вересень</h1>
-<div class="sub">Два варіанти охоплення · цільові CPC · частка трафіку · цілі по поведінці й заявках</div>
-
-<div class="note warn"><b>Головне обмеження: бюджет на кампанію, а не загальний.</b> 20 000 ₴/міс = 667 ₴/день. На 7 кампаній це 95 ₴/день на кожну — при CPC 25 ₴ це <b>4 кліки на день</b>. PMax на таких обсягах не навчається, Search не набирає статистики.<br>
-<b>Робочий мінімум — 300–400 ₴/день на кампанію.</b> Тому: менше кампаній, більші бюджети.</div>
-
-<h2>Варіант A vs Варіант B</h2>
-<div class="vbox"><div class="vhead"><h3>Варіант A — Широкий</h3><span class="badge">60 000 ₴/міс · 2 000 ₴/день</span></div>
-<div class="sub">Усі товари від 10 тис ₴ (218 моделей / 436 позицій укр+рос) · 7 кампаній</div>
-<div class="scroll"><table><thead><tr><th class="l">Кампанія</th><th>₴/день</th><th>₴/міс</th><th>Ціль CPC</th><th>Кліків/міс</th><th>Частка трафіку</th><th class="l">Логіка</th></tr></thead><tbody><tr><td class="l"><b>PMax · Меблі медичні</b><div class="sm">94 товари · 10–365 тис ₴</div></td>
-<td class="n"><b>500</b></td><td class="n">15 000</td><td class="n"><b>10 ₴</b></td>
-<td class="n">1 500</td><td class="n">40%</td><td class="l sm">феду найбільше, середній чек помірний</td></tr><tr><td class="l"><b>PMax · Діагностика + Реанімація</b><div class="sm">44 товари · 20 тис–1.8 млн</div></td>
+<h1>Структура і бюджет вересня</h1>
+<div class="sub">Товари клієнта: 51 модель / 102 позиції · 4 PMax + 3 Search · Search тільки точні цільові ключі</div>
+<div class="note"><b>Склад товарів:</b> меблі АТОН (8) · ліжка USI (10) · монітори (5) · кольпоскопи KN-2200 (10) · реабілітація + УХТ (7) · УЗД DW (6) · гемодіаліз SWS (5). Партнерські товари не рекламуємо.</div>
+<h2>Сценарії бюджету</h2>
+<div class="tabs"><button class='tb' data-s='s0'>Мінімальний · 1 700 ₴/день</button><button class='tb act' data-s='s1'>Робочий (рекомендую) · 2 000 ₴/день</button><button class='tb' data-s='s2'>Розширений · 3 000 ₴/день</button></div>
+<div class="sec" data-s="s0">
+<div class="cards">
+<div class="card"><div class="k">Бюджет / день</div><div class="v">1 700 ₴</div></div>
+<div class="card"><div class="k">Бюджет / місяць</div><div class="v">51 000 ₴</div></div>
+<div class="card"><div class="k">Кліків / день</div><div class="v">112</div></div>
+<div class="card"><div class="k">Кліків / місяць</div><div class="v">3 356</div></div>
+<div class="card"><div class="k">Сер. CPC</div><div class="v">15.2 ₴</div></div>
+<div class="card"><div class="k">Заявок (ціль 1–1.5%)</div><div class="v" style="color:#0b7a5b">30–45</div></div>
+</div>
+<div class="note ok"><b>Ємність достатня.</b> 1 700 ₴/день вкладається в реальну здатність акаунта поглинати бюджет (~2 000–2 100 ₴/день на товарах клієнта + Search).</div>
+<div class="scroll"><table><thead><tr><th class="l">Кампанія</th><th>₴/день</th><th>₴/міс</th><th>Ціль CPC</th><th>Кліків/день</th><th>Кліків/міс</th><th>Частка</th><th class="l">Логіка</th></tr></thead><tbody><tr><td class="l"><b>PMax · Дешеві (АТОН + недорогі USI)</b><div class="sm">11 моделей / 22 позиції · 3.3–63 тис ₴</div></td>
+<td class="n"><b>340</b></td><td class="n">10 200</td><td class="n"><b>7 ₴</b></td>
+<td class="n">49</td><td class="n">1 457</td><td class="n">43%</td><td class="l sm">найдешевший клік, єдиний напрям із покупками</td></tr><tr><td class="l"><b>PMax · Діагностика</b><div class="sm">21 модель / 42 позиції · монітори, УЗД, кольпоскопи</div></td>
+<td class="n"><b>340</b></td><td class="n">10 200</td><td class="n"><b>20 ₴</b></td>
+<td class="n">17</td><td class="n">510</td><td class="n">15%</td><td class="l sm">пріоритет клієнта, найбільший чек</td></tr><tr><td class="l"><b>PMax · Ліжка USI</b><div class="sm">7 моделей / 14 позицій · 92–365 тис ₴</div></td>
+<td class="n"><b>298</b></td><td class="n">8 925</td><td class="n"><b>15 ₴</b></td>
+<td class="n">20</td><td class="n">595</td><td class="n">18%</td><td class="l sm">стабільний попит у ніші</td></tr><tr><td class="l"><b>PMax · Реабілітація + Гемодіаліз</b><div class="sm">12 моделей / 24 позиції · 125 тис–2.1 млн</div></td>
+<td class="n"><b>298</b></td><td class="n">8 925</td><td class="n"><b>22 ₴</b></td>
+<td class="n">14</td><td class="n">406</td><td class="n">12%</td><td class="l sm">реабілітація, УХТ, SWS</td></tr><tr><td class="l"><b>Search · Діагностика</b><div class="sm">точні ключі: монітори, УЗД, кольпоскопи</div></td>
+<td class="n"><b>170</b></td><td class="n">5 100</td><td class="n"><b>32 ₴</b></td>
+<td class="n">5</td><td class="n">159</td><td class="n">5%</td><td class="l sm">CTR 10.5% — оголошення релевантні</td></tr><tr><td class="l"><b>Search · Ліжка + меблі</b><div class="sm">точні ключі</div></td>
+<td class="n"><b>150</b></td><td class="n">4 488</td><td class="n"><b>35 ₴</b></td>
+<td class="n">4</td><td class="n">128</td><td class="n">4%</td><td class="l sm">найбільший пошуковий попит</td></tr><tr><td class="l"><b>Search · Реабілітація + УХТ + гемодіаліз</b><div class="sm">точні ключі</div></td>
+<td class="n"><b>100</b></td><td class="n">3 009</td><td class="n"><b>30 ₴</b></td>
+<td class="n">3</td><td class="n">100</td><td class="n">3%</td><td class="l sm">дав єдиний дзвінок</td></tr><tr class="tot"><td class="l"><b>РАЗОМ</b></td><td class="n"><b>1 700</b></td><td class="n"><b>51 000</b></td>
+<td class="n"><b>15.2 ₴</b></td><td class="n"><b>112</b></td><td class="n"><b>3 356</b></td><td class="n">100%</td><td></td></tr></tbody></table></div></div><div class="sec on" data-s="s1">
+<div class="cards">
+<div class="card"><div class="k">Бюджет / день</div><div class="v">2 000 ₴</div></div>
+<div class="card"><div class="k">Бюджет / місяць</div><div class="v">60 000 ₴</div></div>
+<div class="card"><div class="k">Кліків / день</div><div class="v">132</div></div>
+<div class="card"><div class="k">Кліків / місяць</div><div class="v">3 948</div></div>
+<div class="card"><div class="k">Сер. CPC</div><div class="v">15.2 ₴</div></div>
+<div class="card"><div class="k">Заявок (ціль 1–1.5%)</div><div class="v" style="color:#0b7a5b">36–53</div></div>
+</div>
+<div class="note ok"><b>Ємність достатня.</b> 2 000 ₴/день вкладається в реальну здатність акаунта поглинати бюджет (~2 000–2 100 ₴/день на товарах клієнта + Search).</div>
+<div class="scroll"><table><thead><tr><th class="l">Кампанія</th><th>₴/день</th><th>₴/міс</th><th>Ціль CPC</th><th>Кліків/день</th><th>Кліків/міс</th><th>Частка</th><th class="l">Логіка</th></tr></thead><tbody><tr><td class="l"><b>PMax · Дешеві (АТОН + недорогі USI)</b><div class="sm">11 моделей / 22 позиції · 3.3–63 тис ₴</div></td>
+<td class="n"><b>400</b></td><td class="n">12 000</td><td class="n"><b>7 ₴</b></td>
+<td class="n">57</td><td class="n">1 714</td><td class="n">43%</td><td class="l sm">найдешевший клік, єдиний напрям із покупками</td></tr><tr><td class="l"><b>PMax · Діагностика</b><div class="sm">21 модель / 42 позиції · монітори, УЗД, кольпоскопи</div></td>
 <td class="n"><b>400</b></td><td class="n">12 000</td><td class="n"><b>20 ₴</b></td>
-<td class="n">600</td><td class="n">16%</td><td class="l sm">монітори, УЗД, дефібрилятори</td></tr><tr><td class="l"><b>PMax · Хірургія + Фізіо + Нефрологія</b><div class="sm">34 товари · 12 тис–2.1 млн</div></td>
+<td class="n">20</td><td class="n">600</td><td class="n">15%</td><td class="l sm">пріоритет клієнта, найбільший чек</td></tr><tr><td class="l"><b>PMax · Ліжка USI</b><div class="sm">7 моделей / 14 позицій · 92–365 тис ₴</div></td>
+<td class="n"><b>350</b></td><td class="n">10 500</td><td class="n"><b>15 ₴</b></td>
+<td class="n">23</td><td class="n">700</td><td class="n">18%</td><td class="l sm">стабільний попит у ніші</td></tr><tr><td class="l"><b>PMax · Реабілітація + Гемодіаліз</b><div class="sm">12 моделей / 24 позиції · 125 тис–2.1 млн</div></td>
 <td class="n"><b>350</b></td><td class="n">10 500</td><td class="n"><b>22 ₴</b></td>
-<td class="n">477</td><td class="n">13%</td><td class="l sm">столи, реабілітація, гемодіаліз</td></tr><tr><td class="l"><b>PMax · Інші категорії</b><div class="sm">49 товарів · 10 тис–7.3 млн</div></td>
-<td class="n"><b>300</b></td><td class="n">9 000</td><td class="n"><b>12 ₴</b></td>
-<td class="n">750</td><td class="n">20%</td><td class="l sm">те, що у фіді без категорії</td></tr><tr><td class="l"><b>Search · Ліжка медичні</b><div class="sm">точні ключі</div></td>
-<td class="n"><b>200</b></td><td class="n">6 000</td><td class="n"><b>35 ₴</b></td>
-<td class="n">171</td><td class="n">5%</td><td class="l sm">найбільший попит у Search</td></tr><tr><td class="l"><b>Search · УЗД апарати</b><div class="sm">точні ключі</div></td>
-<td class="n"><b>150</b></td><td class="n">4 500</td><td class="n"><b>33 ₴</b></td>
-<td class="n">136</td><td class="n">4%</td><td class="l sm">високий CTR 10.5%</td></tr><tr><td class="l"><b>Search · Гемодіаліз</b><div class="sm">точні ключі</div></td>
-<td class="n"><b>100</b></td><td class="n">3 000</td><td class="n"><b>35 ₴</b></td>
-<td class="n">86</td><td class="n">2%</td><td class="l sm">дав єдиний дзвінок</td></tr><tr class="tot"><td class="l"><b>РАЗОМ</b></td><td class="n"><b>2 000</b></td><td class="n"><b>60 000</b></td>
-<td class="n"><b>16.1 ₴</b></td><td class="n"><b>3 721</b></td><td class="n">100%</td><td></td></tr></tbody></table></div>
-<div class="note"><b>Кому підходить:</b> коли мета — максимальне охоплення й пошук неочевидних напрямів попиту. <b>Ризик:</b> 436 позицій на 7 кампаній — бюджет розмивається, дорогі апарати «з'їдають» покази дешевих.</div></div>
-
-<div class="vbox"><div class="vhead"><h3>Варіант B — Фокус</h3><span class="badge">36 000 ₴/міс · 1 200 ₴/день</span></div>
-<div class="sub">Тільки вибрані товари клієнта (19 моделей / 38 позицій) · 4 кампанії</div>
-<div class="scroll"><table><thead><tr><th class="l">Кампанія</th><th>₴/день</th><th>₴/міс</th><th>Ціль CPC</th><th>Кліків/міс</th><th>Частка трафіку</th><th class="l">Логіка</th></tr></thead><tbody><tr><td class="l"><b>PMax · Вибрані дорогі</b><div class="sm">22 позиції · монітори, реабілітація, УХТ</div></td>
-<td class="n"><b>400</b></td><td class="n">12 000</td><td class="n"><b>25 ₴</b></td>
-<td class="n">480</td><td class="n">17%</td><td class="l sm">пріоритет клієнта</td></tr><tr><td class="l"><b>PMax · Меблі АТОН (дешеві)</b><div class="sm">16 позицій · 3–10 тис ₴</div></td>
-<td class="n"><b>400</b></td><td class="n">12 000</td><td class="n"><b>6 ₴</b></td>
-<td class="n">2 000</td><td class="n">70%</td><td class="l sm">єдиний напрям із покупками</td></tr><tr><td class="l"><b>Search · Монітори + Реабілітація + УХТ</b><div class="sm">об&#x27;єднана, точні ключі</div></td>
-<td class="n"><b>250</b></td><td class="n">7 500</td><td class="n"><b>30 ₴</b></td>
-<td class="n">250</td><td class="n">9%</td><td class="l sm">3 напрями в одній для обсягу</td></tr><tr><td class="l"><b>Search · Гемодіаліз + Ліжка</b><div class="sm">об&#x27;єднана, точні ключі</div></td>
-<td class="n"><b>150</b></td><td class="n">4 500</td><td class="n"><b>35 ₴</b></td>
-<td class="n">129</td><td class="n">4%</td><td class="l sm">де були дзвінки</td></tr><tr class="tot"><td class="l"><b>РАЗОМ</b></td><td class="n"><b>1 200</b></td><td class="n"><b>36 000</b></td>
-<td class="n"><b>12.6 ₴</b></td><td class="n"><b>2 859</b></td><td class="n">100%</td><td></td></tr></tbody></table></div>
-<div class="note ok"><b>Кому підходить:</b> коли мета — перевірити оновлений сайт на керованому наборі товарів. <b>Дає більше кліків за менші гроші</b> (2 859 проти 3 721), бо дешеві меблі АТОН тягнуть середній CPC вниз. <b>Моя рекомендація для вересня</b> — саме цей варіант: тест має бути чистим, а не широким.</div></div>
-
-<h2>Цільові CPC по типах</h2>
-<div class="scroll"><table><thead><tr><th class="l">Тип кампанії</th><th>Факт</th><th>Ціль</th><th class="l">Коментар</th></tr></thead><tbody><tr><td class='l'><b>PMax дешеві товари (3–10 тис)</b></td><td class='n'>5.3 ₴</td><td class='n' style='color:#0b7a5b;font-weight:700'>5–8 ₴</td><td class='l sm'>тримати; це найдешевший клік в акаунті</td></tr><tr><td class='l'><b>PMax середні (10–150 тис)</b></td><td class='n'>8.5–14 ₴</td><td class='n' style='color:#0b7a5b;font-weight:700'>10–15 ₴</td><td class='l sm'>норма</td></tr><tr><td class='l'><b>PMax дороге обладнання (150 тис+)</b></td><td class='n'>36.4 ₴</td><td class='n' style='color:#0b7a5b;font-weight:700'>20–25 ₴</td><td class='l sm'><b>знизити</b> — зараз переплата; допоможуть точніші сигнали й більше даних</td></tr><tr><td class='l'><b>Search монітори / реабілітація / УХТ</b></td><td class='n'>22–36 ₴</td><td class='n' style='color:#0b7a5b;font-weight:700'>25–30 ₴</td><td class='l sm'>ніша дорога, різко не впаде</td></tr><tr><td class='l'><b>Search ліжка / УЗД / гемодіаліз</b></td><td class='n'>33–36 ₴</td><td class='n' style='color:#0b7a5b;font-weight:700'>30–35 ₴</td><td class='l sm'>тримати; головне — не CPC, а поведінка після кліку</td></tr></tbody></table></div>
-
+<td class="n">16</td><td class="n">477</td><td class="n">12%</td><td class="l sm">реабілітація, УХТ, SWS</td></tr><tr><td class="l"><b>Search · Діагностика</b><div class="sm">точні ключі: монітори, УЗД, кольпоскопи</div></td>
+<td class="n"><b>200</b></td><td class="n">6 000</td><td class="n"><b>32 ₴</b></td>
+<td class="n">6</td><td class="n">188</td><td class="n">5%</td><td class="l sm">CTR 10.5% — оголошення релевантні</td></tr><tr><td class="l"><b>Search · Ліжка + меблі</b><div class="sm">точні ключі</div></td>
+<td class="n"><b>176</b></td><td class="n">5 280</td><td class="n"><b>35 ₴</b></td>
+<td class="n">5</td><td class="n">151</td><td class="n">4%</td><td class="l sm">найбільший пошуковий попит</td></tr><tr><td class="l"><b>Search · Реабілітація + УХТ + гемодіаліз</b><div class="sm">точні ключі</div></td>
+<td class="n"><b>118</b></td><td class="n">3 540</td><td class="n"><b>30 ₴</b></td>
+<td class="n">4</td><td class="n">118</td><td class="n">3%</td><td class="l sm">дав єдиний дзвінок</td></tr><tr class="tot"><td class="l"><b>РАЗОМ</b></td><td class="n"><b>2 000</b></td><td class="n"><b>60 000</b></td>
+<td class="n"><b>15.2 ₴</b></td><td class="n"><b>132</b></td><td class="n"><b>3 948</b></td><td class="n">100%</td><td></td></tr></tbody></table></div></div><div class="sec" data-s="s2">
+<div class="cards">
+<div class="card"><div class="k">Бюджет / день</div><div class="v">3 000 ₴</div></div>
+<div class="card"><div class="k">Бюджет / місяць</div><div class="v">90 000 ₴</div></div>
+<div class="card"><div class="k">Кліків / день</div><div class="v">197</div></div>
+<div class="card"><div class="k">Кліків / місяць</div><div class="v">5 922</div></div>
+<div class="card"><div class="k">Сер. CPC</div><div class="v">15.2 ₴</div></div>
+<div class="card"><div class="k">Заявок (ціль 1–1.5%)</div><div class="v" style="color:#0b7a5b">53–80</div></div>
+</div>
+<div class="note warn"><b>⚠️ Ризик недовитрати.</b> За фактом навіть весь фід (496 товарів) брав максимум <b>711 ₴/день</b>, а 22 вибрані — <b>287 ₴/день</b>. Реальна ємність 102 позицій клієнта + Search — приблизно <b>2 000–2 100 ₴/день</b>. При 3 000 ₴ частина бюджету, найімовірніше, <b>не відкрутиться</b> (реально ~2 000–2 300 ₴). Щоб вибрати весь бюджет, потрібно або додати партнерські товари, або підняти цільові CPC, або підключити Demand Gen.</div>
+<div class="scroll"><table><thead><tr><th class="l">Кампанія</th><th>₴/день</th><th>₴/міс</th><th>Ціль CPC</th><th>Кліків/день</th><th>Кліків/міс</th><th>Частка</th><th class="l">Логіка</th></tr></thead><tbody><tr><td class="l"><b>PMax · Дешеві (АТОН + недорогі USI)</b><div class="sm">11 моделей / 22 позиції · 3.3–63 тис ₴</div></td>
+<td class="n"><b>600</b></td><td class="n">18 000</td><td class="n"><b>7 ₴</b></td>
+<td class="n">86</td><td class="n">2 571</td><td class="n">43%</td><td class="l sm">найдешевший клік, єдиний напрям із покупками</td></tr><tr><td class="l"><b>PMax · Діагностика</b><div class="sm">21 модель / 42 позиції · монітори, УЗД, кольпоскопи</div></td>
+<td class="n"><b>600</b></td><td class="n">18 000</td><td class="n"><b>20 ₴</b></td>
+<td class="n">30</td><td class="n">900</td><td class="n">15%</td><td class="l sm">пріоритет клієнта, найбільший чек</td></tr><tr><td class="l"><b>PMax · Ліжка USI</b><div class="sm">7 моделей / 14 позицій · 92–365 тис ₴</div></td>
+<td class="n"><b>525</b></td><td class="n">15 750</td><td class="n"><b>15 ₴</b></td>
+<td class="n">35</td><td class="n">1 050</td><td class="n">18%</td><td class="l sm">стабільний попит у ніші</td></tr><tr><td class="l"><b>PMax · Реабілітація + Гемодіаліз</b><div class="sm">12 моделей / 24 позиції · 125 тис–2.1 млн</div></td>
+<td class="n"><b>525</b></td><td class="n">15 750</td><td class="n"><b>22 ₴</b></td>
+<td class="n">24</td><td class="n">716</td><td class="n">12%</td><td class="l sm">реабілітація, УХТ, SWS</td></tr><tr><td class="l"><b>Search · Діагностика</b><div class="sm">точні ключі: монітори, УЗД, кольпоскопи</div></td>
+<td class="n"><b>300</b></td><td class="n">9 000</td><td class="n"><b>32 ₴</b></td>
+<td class="n">9</td><td class="n">281</td><td class="n">5%</td><td class="l sm">CTR 10.5% — оголошення релевантні</td></tr><tr><td class="l"><b>Search · Ліжка + меблі</b><div class="sm">точні ключі</div></td>
+<td class="n"><b>264</b></td><td class="n">7 920</td><td class="n"><b>35 ₴</b></td>
+<td class="n">8</td><td class="n">226</td><td class="n">4%</td><td class="l sm">найбільший пошуковий попит</td></tr><tr><td class="l"><b>Search · Реабілітація + УХТ + гемодіаліз</b><div class="sm">точні ключі</div></td>
+<td class="n"><b>177</b></td><td class="n">5 310</td><td class="n"><b>30 ₴</b></td>
+<td class="n">6</td><td class="n">177</td><td class="n">3%</td><td class="l sm">дав єдиний дзвінок</td></tr><tr class="tot"><td class="l"><b>РАЗОМ</b></td><td class="n"><b>3 000</b></td><td class="n"><b>90 000</b></td>
+<td class="n"><b>15.2 ₴</b></td><td class="n"><b>197</b></td><td class="n"><b>5 922</b></td><td class="n">100%</td><td></td></tr></tbody></table></div></div>
 <h2>Цілі по поведінці та заявках</h2>
-<div class="note"><b>Нова форма «Заявка на консультацію» — головна ціль вересня.</b> В B2B-медтехніці ніхто не купує апарат за 500 тис ₴ у кошику: рішення — заявка або дзвінок. Тому саме заявки й дзвінки стають основною конверсією, а покупки в кошику лишаються тільки для дешевих позицій (АТОН).</div>
-<div class="scroll"><table><thead><tr><th class="l">Метрика</th><th class="l">Факт зараз</th><th class="l">Ціль вересня</th><th class="l">Звідки беремо</th></tr></thead><tbody><tr><td class='l'><b>Час на сайті</b></td><td class='l'>2:27 у середньому; Search 0:27–1:14</td><td class='l' style='color:#0b7a5b;font-weight:700'>2:00+ для PMax, 1:30+ для Search</td><td class='l sm'>GA4 · середня тривалість сесії</td></tr><tr><td class='l'><b>Перегляд товару / сесія</b></td><td class='l'>0.94 у середньому; Search_UZD 0.15</td><td class='l' style='color:#0b7a5b;font-weight:700'>1.2+ для PMax, 0.8+ для Search</td><td class='l sm'>GA4 · view_item ÷ сесії</td></tr><tr><td class='l'><b>Взаємодія (engaged)</b></td><td class='l'>50% у середньому</td><td class='l' style='color:#0b7a5b;font-weight:700'>60%+</td><td class='l sm'>GA4 · engagedSessions</td></tr><tr><td class='l'><b>Додавання в кошик</b></td><td class='l'>133 за 2.5 міс = 2.2% сесій</td><td class='l' style='color:#0b7a5b;font-weight:700'>4–5% для дешевих (АТОН)</td><td class='l sm'>GA4 · add_to_cart — тільки дешеві позиції</td></tr><tr><td class='l'><b>Заявка на консультацію</b></td><td class='l'>нема (форма ще не працює)</td><td class='l' style='color:#0b7a5b;font-weight:700'>1–1.5% від сесій</td><td class='l sm'>нова форма · головна ціль</td></tr><tr><td class='l'><b>Дзвінки Ringostat</b></td><td class='l'>2 за 2.5 місяці</td><td class='l' style='color:#0b7a5b;font-weight:700'>8–12 / місяць</td><td class='l sm'>Ringostat → GA4 → Google Ads</td></tr></tbody></table></div>
-
-<h2>Що показує факт про Search</h2>
-<div class="note warn">Search має <b>найкращий CTR (9–14%)</b> — оголошення релевантні, люди клікають. Але <b>найгіршу поведінку на сайті</b>: Search_UZD — 0:27 на сайті і 0.15 перегляду товару на сесію; Search_Lizhka — 0.40. Тобто людина приходить на категорійну сторінку і не відкриває жодного товару.<br><br>
-<b>Висновок:</b> проблема не в рекламі, а в посадковій сторінці. Якщо оновлений сайт це виправить — Search стане рентабельним. Це і є головна гіпотеза тесту.</div>
-
+<div class="note"><b>Головна ціль вересня — заявка на консультацію.</b> Обладнання за 100 тис – 2 млн ₴ не купують у кошику: рішення — заявка або дзвінок. Покупки в кошику лишаються метрикою лише для дешевих позицій АТОН.</div>
+<div class="scroll"><table><thead><tr><th class="l">Метрика</th><th class="l">Факт зараз</th><th class="l">Ціль вересня</th></tr></thead><tbody><tr><td class='l'><b>Час на сайті</b></td><td class='l'>2:27 сер.; Search 0:27–1:14</td><td class='l' style='color:#0b7a5b;font-weight:700'>PMax 2:00+ · Search 1:30+</td></tr><tr><td class='l'><b>Перегляд товару / сесія</b></td><td class='l'>0.94 сер.; Search_UZD 0.15</td><td class='l' style='color:#0b7a5b;font-weight:700'>PMax 1.2+ · Search 0.8+</td></tr><tr><td class='l'><b>Взаємодія (engaged)</b></td><td class='l'>50%</td><td class='l' style='color:#0b7a5b;font-weight:700'>60%+</td></tr><tr><td class='l'><b>Додавання в кошик</b></td><td class='l'>2.2% сесій (133 за 2.5 міс)</td><td class='l' style='color:#0b7a5b;font-weight:700'>4–5% для дешевих (АТОН)</td></tr><tr><td class='l'><b>Заявка на консультацію</b></td><td class='l'>0 — форми ще нема</td><td class='l' style='color:#0b7a5b;font-weight:700'>1–1.5% від сесій</td></tr><tr><td class='l'><b>Дзвінки Ringostat</b></td><td class='l'>2 за 2.5 місяці</td><td class='l' style='color:#0b7a5b;font-weight:700'>8–12 / місяць</td></tr></tbody></table></div>
+<h2>Чому Search об'єднано в 3 кампанії</h2>
+<div class="note">Було 7 кампаній. При 500 ₴/день на весь Search це 70 ₴ на кампанію = 2 кліки/день — статистики не буде. Об'єднання в 3 дає 120–200 ₴ на кампанію. Усі ключі — <b>точна відповідність</b>, 528 вичищених запитів, плюс 4 233 мінус-слова.</div>
 <h2>Що потрібно від сайту до старту</h2>
-<ul>
-<li><b>Форма «Заявка на консультацію»</b> на кожній картці дорогого товару + на категоріях (3 поля: ім'я, телефон, заклад)</li>
-<li><b>Трекінг submit форми</b> як конверсія в GA4 → Google Ads (без цього тест беззмістовний)</li>
+<ul><li><b>Форма «Заявка на консультацію»</b> на картках дорогих товарів і категоріях</li>
+<li><b>Трекінг submit форми</b> як конверсія GA4 → Google Ads — без цього тест беззмістовний</li>
 <li><b>Ringostat</b> на всіх сторінках, включно з /ru/</li>
-<li><b>Категорійні сторінки</b> — товари мають бути видимі одразу, з цінами (зараз люди з Search не відкривають картки)</li>
-</ul>
-<footer style="margin-top:26px;color:#9aa3ae;font-size:12px;text-align:center">Rodolit · структура вересня · факт 16.06–24.08.2026 · Google Ads API + GA4</footer>
-</div></body></html>
+<li><b>Категорійні сторінки</b> з видимими товарами і цінами — зараз з Search люди не відкривають картки (0.15 перегляду/сесія)</li></ul>
+<footer style="margin-top:26px;color:#9aa3ae;font-size:12px;text-align:center">Rodolit · вересень 2026 · база: факт 16.06–24.08.2026</footer>
+</div>
+<script>
+document.querySelectorAll('.tb').forEach(b=>b.onclick=()=>{
+ document.querySelectorAll('.tb').forEach(x=>x.classList.remove('act'));b.classList.add('act');
+ document.querySelectorAll('.sec').forEach(s=>s.classList.toggle('on',s.dataset.s===b.dataset.s));
+});
+</script></body></html>
