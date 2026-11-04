@@ -71,6 +71,14 @@ tbody tr:hover td.rodc{background:var(--rod)}
 .tag.ok{background:var(--good-bg);color:var(--good)}
 .tag.no{background:var(--bad-bg);color:var(--bad)}
 .tag.cl{background:#fbefd2;color:#8a5a00}
+.whykpi{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:10px;margin:14px 0}
+.wk{border-radius:10px;padding:10px 12px;border-left:4px solid var(--muted);background:color-mix(in srgb,var(--muted) 8%,transparent)}
+.wk b{display:block;font-size:24px;font-family:var(--display)}.wk span{font-size:13px}
+.wk.bad,tr.grp.bad td{border-color:var(--bad)}.wk.bad b{color:var(--bad)}
+.wk.warn,tr.grp.warn td{border-color:#d29a00}.wk.warn b{color:#b07d00}
+.wk.ok,tr.grp.ok td{border-color:var(--accent)}.wk.ok b{color:var(--accent)}
+.wk.free,tr.grp.free td{border-color:#5b7fd6}.wk.free b{color:#5b7fd6}
+tr.grp td{border-left:4px solid;padding-top:14px;background:color-mix(in srgb,var(--muted) 6%,transparent)}
 td.kit{white-space:normal;min-width:300px;max-width:420px;font-size:12.5px}
 table.mini{width:100%}
 table.mini td,table.mini th{padding:5px 8px}
@@ -177,29 +185,45 @@ figcaption{padding:8px 10px;font-size:12.5px;color:var(--muted)}
 </ul><p class="meta">Реклама — зі скрінів клієнта (22 моделей).</p></div>
 <div class="card"><h3>Лише в Rodolit (інших продавців не знайдено)</h3><p><a href="https://rodolit.com.ua/bahatoparametrychnyi-monitor-patsiienta-yk-8000d" target="_blank" rel="noopener">YK-8000D</a>, <a href="https://rodolit.com.ua/prystrii-dlia-trenuvannia-khody-xy-k-g2" target="_blank" rel="noopener">XY-K-G2</a>, <a href="https://rodolit.com.ua/kolkoskop-tsyfrovyi-u-povnii-konfihuratsii-kn-2200-standart" target="_blank" rel="noopener">KN-2200 повна конфігурація (ПК, монітор, візок)</a>, <a href="https://rodolit.com.ua/portatyvnyi-tsyfrovyi-kolposkop-kn-2200a-medium" target="_blank" rel="noopener">KN-2200A портативний Medium</a>, <a href="https://rodolit.com.ua/kolkoskop-tsyfrovyi-u-povnii-konfihuratsii-kn-2200a-standart" target="_blank" rel="noopener">KN-2200A повна конфігурація (3 варіанти)</a>, <a href="https://rodolit.com.ua/portatyvnyi-tsyfrovyi-kolposkop-kn-2200ih-premium" target="_blank" rel="noopener">KN-2200IH Premium портативний</a>, <a href="https://rodolit.com.ua/kolkoskop-tsyfrovyi-u-povnii-konfihuratsii-kn-2200-ihone-monitor-standart" target="_blank" rel="noopener">KN-2200IH повна конфігурація (2 варіанти)</a>, <a href="https://rodolit.com.ua/kolposkop-optychnyi-kn-2200bi-standart" target="_blank" rel="noopener">KN-2200B / BI з візком і ПК (3 варіанти)</a>, <a href="https://rodolit.com.ua/lizhko-medychne-z-pozytsiieiu-faulera-ruchnoho-keruvannia-usi-908" target="_blank" rel="noopener">Ліжка USI (9 моделей)</a>, <a href="https://rodolit.com.ua/elektrohidravlichnyi-operatsiinyi-stil-at-6800-t1" target="_blank" rel="noopener">Столи AT (7 моделей)</a></p></div>
 </div></div>
-<div class="cols2">
-<div class="stack"><div class="card"><h3>Хто купує текстову рекламу на ваших запитах</h3><ul class="bars">
-<li><span>Rodolit</span><i style="--w:100%" class="rod"></i><b>14 з 29</b></li>
-<li><span>MedExim</span><i style="--w:86%" class=""></i><b>12 з 29</b></li>
-<li><span>Loran</span><i style="--w:71%" class=""></i><b>10 з 29</b></li>
-<li><span>Protech Solutions</span><i style="--w:36%" class=""></i><b>5 з 29</b></li>
-<li><span>azaris</span><i style="--w:36%" class=""></i><b>5 з 29</b></li>
-<li><span>harwind</span><i style="--w:29%" class=""></i><b>4 з 29</b></li>
-<li><span>medigran</span><i style="--w:14%" class=""></i><b>2 з 29</b></li>
-<li><span>Reanimed</span><i style="--w:14%" class=""></i><b>2 з 29</b></li>
-</ul></div><div class="card"><h3>Хто купує товарну рекламу на ваших запитах</h3><ul class="bars">
-<li><span>Rodolit</span><i style="--w:100%" class="rod"></i><b>23 з 29</b></li>
-<li><span>techno-med</span><i style="--w:74%" class=""></i><b>17 з 29</b></li>
-<li><span>Prom.ua</span><i style="--w:61%" class=""></i><b>14 з 29</b></li>
-<li><span>MedCare</span><i style="--w:43%" class=""></i><b>10 з 29</b></li>
-<li><span>NewMed</span><i style="--w:43%" class=""></i><b>10 з 29</b></li>
-<li><span>Medteh</span><i style="--w:35%" class=""></i><b>8 з 29</b></li>
-<li><span>Zenet (Medzenet)</span><i style="--w:35%" class=""></i><b>8 з 29</b></li>
-<li><span>Медтехника</span><i style="--w:35%" class=""></i><b>8 з 29</b></li>
-<li><span>Medhome</span><i style="--w:22%" class=""></i><b>5 з 29</b></li>
-<li><span>p-medical</span><i style="--w:17%" class=""></i><b>4 з 29</b></li>
-</ul><p class="meta">Зі скрінів клієнта, 29 запитів (моделі й загальні). Детально — вкладка «Реклама конкурентів».</p></div></div>
+<div class="card why"><h3>Реклама показується — чому ж немає продажів?</h3>
+<p>Rodolit справді є в рекламі майже на всіх запитах. Але показ — це не продаж: покупець порівнює картки поруч. <b>На 13 з 22</b> перевірених моделей поруч із вашою карткою є та сама модель або схожий аналог дешевше.</p>
+<div class="whykpi">
+<div class="wk bad"><b>7</b><span>Поруч та сама модель дешевше</span></div>
+<div class="wk bad"><b>1</b><span>Вашої картки немає, конкуренти є</span></div>
+<div class="wk warn"><b>5</b><span>Поруч дешевші аналоги</span></div>
+<div class="wk ok"><b>5</b><span>Ціна на рівні або ви найдешевші</span></div>
+<div class="wk free"><b>4</b><span>Товарної реклами немає ні в кого</span></div>
 </div>
+<table class="mini whyt"><thead><tr><th>Запит</th><th class="r">Ваша ціна</th><th>Що поруч у рекламі</th></tr></thead><tbody>
+<tr class="grp bad"><td colspan="3"><b>Поруч та сама модель дешевше</b> — <span class="meta">Покупець бачить вашу картку і поруч ту саму модель дешевше — клікає не вас.</span></td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BA%D0%BE%D0%BB%D1%8C%D0%BF%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%20KN-2200" target="_blank" rel="noopener">кольпоскоп KN-2200</a></td><td class="r num">95 013</td><td>Prom.ua 67 068 (ймовірно, ваш магазин на Prom)</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BC%D0%BE%D0%BD%D1%96%D1%82%D0%BE%D1%80%20%D0%BF%D0%B0%D1%86%D1%96%D1%94%D0%BD%D1%82%D0%B0%20E12" target="_blank" rel="noopener">монітор пацієнта E12</a></td><td class="r num">75 348</td><td>Prom.ua 60 795</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%B3%D1%96%D0%BD%D0%B5%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20MC-D05" target="_blank" rel="noopener">гінекологічний стіл MC-D05</a></td><td class="r num">178 800</td><td>Medteh 151 980</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%B3%D1%96%D0%BD%D0%B5%D0%BA%D0%BE%D0%BB%D0%BE%D0%B3%D1%96%D1%87%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20MC-H04" target="_blank" rel="noopener">гінекологічний стіл MC-H04</a></td><td class="r num">95 800</td><td>NewMed, MedCare 81 430</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20YA-01M" target="_blank" rel="noopener">операційний стіл YA-01M</a></td><td class="r num">91 000</td><td>Medteh 77 350, NewMed 83 300</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D1%81%D0%B2%D1%96%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%20MK-D700ZF" target="_blank" rel="noopener">світильник MK-D700ZF</a></td><td class="r num">208 000</td><td>NewMed, MedCare 141 440; ХЛР 166 400</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D1%81%D0%B2%D1%96%D1%82%D0%B8%D0%BB%D1%8C%D0%BD%D0%B8%D0%BA%20MK-DL200WY" target="_blank" rel="noopener">світильник MK-DL200WY</a></td><td class="r num">113 505</td><td>NewMed, MedCare 90 000</td></tr>
+<tr class="grp bad"><td colspan="3"><b>Вашої картки немає, конкуренти є</b> — <span class="meta">Запит про вашу модель, а в товарній рекламі — тільки чужі пропозиції.</span></td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20YA-03M" target="_blank" rel="noopener">операційний стіл YA-03M</a></td><td class="r num">127 000</td><td>Medteh, MedCare, NewMed 83 300; Medzenet 114 000</td></tr>
+<tr class="grp warn"><td colspan="3"><b>Поруч дешевші аналоги</b> — <span class="meta">Модель інша або простіша комплектація, але виглядає як те саме і коштує набагато менше.</span></td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BA%D0%BE%D0%BB%D1%8C%D0%BF%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%20KN-2200I" target="_blank" rel="noopener">кольпоскоп KN-2200I</a></td><td class="r num">196 000</td><td>techno-med 126 987, Prom 123 000 — базова версія, у вас Premium</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BA%D0%BE%D0%BB%D1%8C%D0%BF%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%20KN-2200A" target="_blank" rel="noopener">кольпоскоп KN-2200A</a></td><td class="r num">269 204</td><td>Медтехника KN-2200 74 000, Medteh 96 790</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BA%D0%BE%D0%BB%D1%8C%D0%BF%D0%BE%D1%81%D0%BA%D0%BE%D0%BF%20KN-2200B" target="_blank" rel="noopener">кольпоскоп KN-2200B</a></td><td class="r num">330 199</td><td>системи Kernel від 90 611 (MedCare, NewMed)</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BC%D0%BE%D0%BD%D1%96%D1%82%D0%BE%D1%80%20%D0%BF%D0%B0%D1%86%D1%96%D1%94%D0%BD%D1%82%D0%B0%20YK-8000D" target="_blank" rel="noopener">монітор пацієнта YK-8000D</a></td><td class="r num">91 673</td><td>Біомед BM800B 51 643 (techno-med)</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20AT%206800" target="_blank" rel="noopener">операційний стіл AT 6800</a></td><td class="r num">714 150</td><td>MT600 221 300–242 060 (Медтехника, techno-med)</td></tr>
+<tr class="grp ok"><td colspan="3"><b>Ціна на рівні або ви найдешевші</b> — <span class="meta">Тут реклама в порядку — якщо продажів немає, причина не в ціні поруч.</span></td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BC%D0%BE%D0%BD%D1%96%D1%82%D0%BE%D1%80%20%D0%BF%D0%B0%D1%86%D1%96%D1%94%D0%BD%D1%82%D0%B0%20YK-8000B" target="_blank" rel="noopener">монітор пацієнта YK-8000B</a></td><td class="r num">32 651</td><td>конкурентів у товарній рекламі немає</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BC%D0%BE%D0%BD%D1%96%D1%82%D0%BE%D1%80%20%D0%BF%D0%B0%D1%86%D1%96%D1%94%D0%BD%D1%82%D0%B0%20YK-8000C" target="_blank" rel="noopener">монітор пацієнта YK-8000C</a></td><td class="r num">32 651</td><td>Medzenet 33 906, Prom 33 907</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BC%D0%BE%D0%BD%D1%96%D1%82%D0%BE%D1%80%20%D0%BF%D0%B0%D1%86%D1%96%D1%94%D0%BD%D1%82%D0%B0%20E15" target="_blank" rel="noopener">монітор пацієнта E15</a></td><td class="r num">52 115</td><td>конкурентів з цією моделлю немає</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%B0%D0%BF%D0%B0%D1%80%D0%B0%D1%82%20%D1%83%D0%B4%D0%B0%D1%80%D0%BD%D0%BE-%D1%85%D0%B2%D0%B8%D0%BB%D1%8C%D0%BE%D0%B2%D0%BE%D1%97%20%D1%82%D0%B5%D1%80%D0%B0%D0%BF%D1%96%D1%97%20LGT-2500S" target="_blank" rel="noopener">апарат ударно-хвильової терапії LGT-2500S</a></td><td class="r num">447 000</td><td>Medzenet, Prom 446 682 — те саме</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20YA-10E" target="_blank" rel="noopener">операційний стіл YA-10E</a></td><td class="r num">198 000</td><td>тільки ваші картки</td></tr>
+<tr class="grp free"><td colspan="3"><b>Товарної реклами немає ні в кого</b> — <span class="meta">Вільні місця: можна зайняти без конкуренції.</span></td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=XY-PH-V%20%D1%81%D0%B8%D1%81%D1%82%D0%B5%D0%BC%D0%B0%20%D1%82%D1%80%D0%B5%D0%BD%D1%83%D0%B2%D0%B0%D0%BD%D0%BD%D1%8F%20%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81%D1%83" target="_blank" rel="noopener">XY-PH-V система тренування балансу</a></td><td class="r num">—</td><td>реклами немає зовсім</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=XY-K-G2%20%D1%82%D1%80%D0%B5%D0%BD%D0%B0%D0%B6%D0%B5%D1%80%20%D0%B4%D0%BB%D1%8F%20%D1%85%D0%BE%D0%B4%D1%8C%D0%B1%D0%B8" target="_blank" rel="noopener">XY-K-G2 тренажер для ходьби</a></td><td class="r num">—</td><td>реклами немає зовсім</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20YA-08EH" target="_blank" rel="noopener">операційний стіл YA-08EH</a></td><td class="r num">—</td><td>лише текстова реклама</td></tr>
+<tr><td><a href="https://www.google.com/search?gl=ua&amp;hl=uk&amp;q=%D0%BE%D0%BF%D0%B5%D1%80%D0%B0%D1%86%D1%96%D0%B9%D0%BD%D0%B8%D0%B9%20%D1%81%D1%82%D1%96%D0%BB%20YA-03E" target="_blank" rel="noopener">операційний стіл YA-03E</a></td><td class="r num">—</td><td>лише текстова реклама</td></tr>
+</tbody></table>
+<p class="meta">Зі скрінів клієнта, 22 запити за моделями. Скріни показують лише, що бачить покупець; скільки було кліків і заявок — видно тільки в статистиці Google Ads (кампанії, пошукові терміни, конверсії).</p></div>
 </section>
 <section class="tab" id="reklama" hidden>
 <p class="note-src"><b>Джерело:</b> скріни видачі з браузера клієнта (Україна, Стрий, без VPN), 4 листопада 2026. Перевірено 22 запитів за моделями і 7 загальних. Кожен скрін — один момент: реклама між показами змінюється. Попередні дані з автоматичного браузера прибрано — він працював через VPN і Google показував йому іншу рекламу.</p>
