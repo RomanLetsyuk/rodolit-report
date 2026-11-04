@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="uk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rodolit проти Біомед, Medigo, Віола</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600;700&family=Unbounded:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one reading column (~900px), tables scroll inside their own boxes; chips encode price position */
+:root{
+  --bg:#f6f8f8; --surface:#ffffff; --fg:#17201f; --muted:#5b6866; --line:#d9e1df;
+  --accent:#0f6b6b; --accent-soft:#e1efee;
+  --good:#1f7a43; --good-bg:#e3f3e8; --bad:#a3361f; --bad-bg:#f8e6e1; --mid:#6b5d14; --mid-bg:#f4efd8;
+  --display:"Unbounded", "Golos Text", system-ui, sans-serif;
+  --body:"Golos Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono:"JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#101615; --surface:#172020; --fg:#e4ecea; --muted:#9aa9a6; --line:#2b3736;
+  --accent:#5cc4c0; --accent-soft:#1c3332;
+  --good:#7fd59c; --good-bg:#183324; --bad:#f09a85; --bad-bg:#3a201a; --mid:#e2cf7a; --mid-bg:#332d14; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#101615; --surface:#172020; --fg:#e4ecea; --muted:#9aa9a6; --line:#2b3736;
+  --accent:#5cc4c0; --accent-soft:#1c3332;
+  --good:#7fd59c; --good-bg:#183324; --bad:#f09a85; --bad-bg:#3a201a; --mid:#e2cf7a; --mid-bg:#332d14; color-scheme:dark}
+body{background:var(--bg);color:var(--fg);font-family:var(--body);font-size:15.5px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:40px 64px}
+.wrap{max-width:920px;margin:0 auto;display:flex;flex-direction:column;gap:44px}
+h1,h2,h3{text-wrap:balance;margin:0}
+h1{font-family:var(--display);font-weight:600;font-size:clamp(26px,4.4vw,38px);line-height:1.15;letter-spacing:-.01em}
+h2{font-family:var(--display);font-weight:500;font-size:21px;line-height:1.25}
+h3{font-size:16.5px;font-weight:600}
+p{margin:0;max-width:68ch}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);font-weight:600}
+.meta{color:var(--muted);font-size:13.5px}
+header{display:flex;flex-direction:column;gap:12px}
+section{display:flex;flex-direction:column;gap:16px}
+.lead{font-size:17px}
+ul{margin:0;padding-left:20px;display:flex;flex-direction:column;gap:6px}
+li{max-width:70ch}
+.keys{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+.key{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:16px 18px;display:flex;flex-direction:column;gap:6px;min-width:0}
+.key b{font-weight:600}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:10px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:640px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:10px 12px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--accent-soft)}
+tr:last-child td{border-bottom:0}
+td.grp{font-weight:600;white-space:nowrap}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;white-space:nowrap}
+.chip{display:inline-block;font-size:12px;font-weight:600;padding:2px 8px;border-radius:999px;white-space:nowrap}
+.c-good{background:var(--good-bg);color:var(--good)}
+.c-bad{background:var(--bad-bg);color:var(--bad)}
+.c-mid{background:var(--mid-bg);color:var(--mid)}
+.c-none{background:var(--accent-soft);color:var(--accent)}
+.note{border-left:3px solid var(--accent);padding:4px 0 4px 14px;color:var(--muted);font-size:14px}
+.todo{counter-reset:t;list-style:none;padding:0;gap:10px}
+.todo li{counter-increment:t;display:grid;grid-template-columns:28px 1fr;gap:8px}
+.todo li::before{content:counter(t);font-family:var(--mono);color:var(--accent);font-weight:500}
+a{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+footer{color:var(--muted);font-size:13px}
+.back{font-size:14px;font-weight:600;text-decoration:none}
+.shots{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:14px}
+figure{margin:0;background:var(--surface);border:1px solid var(--line);border-radius:10px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+figure a{display:block;line-height:0;background:#fff}
+figure img{width:100%;height:auto;display:block}
+figcaption{padding:10px 12px;font-size:13px;color:var(--muted);border-top:1px solid var(--line)}
+figcaption b{color:var(--fg);font-weight:600}
+.quote{font-style:normal;color:var(--fg)}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+<a class="back" href="./">← До звіту по тижнях</a>
+<header>
+  <div class="eyebrow">Аналіз конкурентів · rodolit.com.ua</div>
+  <h1>Rodolit проти Біомед, Medigo і Віола</h1>
+  <p class="meta">Дані на 4 листопада 2026. Порівняння тільки по 62 товарах, які Rodolit зараз рекламує. Ціни з сайтів конкурентів і з фіду Rodolit, для кольпоскопів враховано знижку Rodolit.</p>
+</header>
+
+<section>
+  <h2>Головне</h2>
+  <div class="keys">
+    <div class="key"><b>Medigo продає ті самі Medik за тими самими цінами.</b><span>Гінекологічні крісла, хірургічні столи YA-03, світильники MK-D700: ціна збігається до гривні. Схоже на спільного постачальника, тож у цих товарах виграє не ціна, а умови: доставка, лізинг, гарантія.</span></div>
+    <div class="key"><b>Кольпоскопи і реабілітаційні тренажери майже без конкуренції.</b><span>У Біомеда їх немає зовсім, у Віоли один відеокольпоскоп, у Medigo два кольпоскопи Lapomed. Після знижки портативний KN-2200 (95 013 ₴) дешевший за Lapomed (106 796 ₴).</span></div>
+    <div class="key"><b>По ліжках і світильниках Rodolit дорожчий.</b><span>Біомед і Віола продають ліжка в 1,5–2 рази дешевше за USI, а світильники Біомеда дешевші на 20–35%. Тут потрібна аргументація, а не боротьба ціною.</span></div>
+    <div class="key"><b>У Google Ads з трьох активний лише Біомед, і то слабко.</b><span>4 текстові оголошення, останні покази 2–3 листопада, і жодне не про наші групи товарів. Віола востаннє рекламувалась у липні 2026, Medigo в Google не рекламується зовсім. Реальні платні конкуренти в пошуку інші: MedExim, Protech Solutions, Loran, Briolight, techno-med.</span></div>
+  </div>
+</section>
+
+<section>
+  <h2>Хто з чим конкурує</h2>
+  <p>Позначки показують, де Rodolit відносно найближчого аналога конкурента.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Група Rodolit</th><th>Біомед</th><th>Medigo</th><th>Віола</th></tr></thead>
+    <tbody>
+      <tr><td class="grp">Монітори YK-8000, E12, E15</td>
+        <td><span class="chip c-good">Rodolit дешевший</span><br>BM800A <span class="num">40 850</span> проти YK-8000B <span class="num">32 651</span>; але є PM6100 за <span class="num">12 825</span></td>
+        <td><span class="chip c-mid">змішано</span><br>E15 <span class="num">81 610</span> (у Rodolit <span class="num">52 115</span>); E12 <span class="num">70 450</span> (у Rodolit <span class="num">75 348</span>)</td>
+        <td><span class="chip c-good">Rodolit дешевший</span><br>IM8B <span class="num">44 038</span>, всього 3 моделі</td></tr>
+      <tr><td class="grp">УХТ LGT-2500S</td>
+        <td><span class="chip c-bad">Rodolit дорожчий</span><br>SW3200 від <span class="num">131 813</span> до <span class="num">509 200</span></td>
+        <td><span class="chip c-bad">Rodolit дорожчий</span><br>V80-B <span class="num">76 290</span>, Q90 <span class="num">139 860</span></td>
+        <td><span class="chip c-none">немає</span></td></tr>
+      <tr><td class="grp">Реабілітаційні тренажери</td>
+        <td><span class="chip c-none">немає</span><br>лише візки, ходунки</td>
+        <td><span class="chip c-none">прямих аналогів немає</span><br>педальний за <span class="num">6 999</span>, CPM <span class="num">139 560</span></td>
+        <td><span class="chip c-none">немає</span></td></tr>
+      <tr><td class="grp">Кольпоскопи KN-2200</td>
+        <td><span class="chip c-none">немає</span></td>
+        <td><span class="chip c-good">Rodolit дешевший у портативних</span><br>Lapomed 720p <span class="num">106 796</span>, 1080p <span class="num">177 718</span></td>
+        <td><span class="chip c-mid">паритет</span><br>C6A HD <span class="num">193 404</span> проти KN-2200 Standart <span class="num">198 823</span></td></tr>
+      <tr><td class="grp">Ліжка USI</td>
+        <td><span class="chip c-bad">Rodolit дорожчий</span><br>FB-E5 <span class="num">72 675</span> проти USI-E7 <span class="num">137 600</span></td>
+        <td><span class="chip c-mid">змішано</span><br>ліжко з вагами Bed-01 <span class="num">385 000</span> проти USI-3001 <span class="num">158 000</span></td>
+        <td><span class="chip c-bad">Rodolit дорожчий</span><br>власні ЛФ-17 <span class="num">40 860</span>–<span class="num">55 161</span></td></tr>
+      <tr><td class="grp">Операційні столи</td>
+        <td><span class="chip c-good">Rodolit дешевший</span><br>MT300D <span class="num">104 500</span> проти YA-01M <span class="num">91 000</span>; ET100 <span class="num">339 388</span> проти YA-10E <span class="num">198 000</span></td>
+        <td><span class="chip c-mid">однакові ціни</span><br>YA-03M <span class="num">127 000</span>, YA-03E <span class="num">347 000</span>, ті самі моделі</td>
+        <td><span class="chip c-mid">близько</span><br>PAX-ST-C/D <span class="num">108 052</span>, PAX-DS-II <span class="num">308 720</span></td></tr>
+      <tr><td class="grp">Хірургічні світильники</td>
+        <td><span class="chip c-bad">Rodolit дорожчий</span><br>ZW-700D <span class="num">151 905</span> проти MK-D700ZF <span class="num">208 000</span></td>
+        <td><span class="chip c-mid">однакові ціни</span><br>MK-D700ZF, MK-D700/500ZF; MK-DL200WY у Rodolit на 9% дешевший</td>
+        <td><span class="chip c-good">Rodolit дешевший</span><br>PANALEX Plus 700 <span class="num">272 400</span></td></tr>
+      <tr><td class="grp">Гінекологічні крісла Medik</td>
+        <td><span class="chip c-mid">змішано</span><br>MT400 <span class="num">96 663</span> ≈ MC-H04; FL-D4B <span class="num">135 375</span> проти MC-D05 <span class="num">178 800</span></td>
+        <td><span class="chip c-mid">однакові ціни</span><br>MC-D05 <span class="num">178 800</span>, MC-H04 <span class="num">95 800</span></td>
+        <td><span class="chip c-bad">Rodolit дорожчий</span><br>власні КрГ-1 <span class="num">22 518</span>, КрГ-2 <span class="num">70 370</span></td></tr>
+      <tr><td class="grp">Оглядові лампи Luxamed</td>
+        <td><span class="chip c-mid">близько</span><br>KD-2021W-1 <span class="num">14 250</span>, ZZ-A250L <span class="num">20 330</span></td>
+        <td><span class="chip c-none">ламп Luxamed немає</span><br>KD-2021W-3 <span class="num">20 248</span></td>
+        <td><span class="chip c-good">Rodolit дешевший</span><br>VioLight <span class="num">22 246</span>–<span class="num">23 608</span></td></tr>
+    </tbody>
+  </table></div>
+  <p class="note">AT і VG Medical (столи від 0,7 до 5,9 млн ₴) жоден із трьох конкурентів не продає. Чи E12 і E15 у Medigo від того самого виробника, що в Rodolit, не перевірено.</p>
+</section>
+
+<section>
+  <h2>Як вони рекламуються</h2>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Біомед</th><th>Medigo</th><th>Віола</th></tr></thead>
+    <tbody>
+      <tr><td class="grp">Google Ads, текстові та банери</td>
+        <td>Активні: останні покази 2–3.11.2026. 4 оголошення: інфузійні насоси, вимірювання FeNO, операційний стіл DC-2000 для С-дуги, дитячий пульсоксиметр</td>
+        <td>0 оголошень за весь час, у будь-якій країні</td>
+        <td>4 оголошення, усі старі: стоматологічні наконечники (липень 2026); банер, відео і реклама в Картах про відеокольпоскоп SmartEye II Plus (листопад 2025)</td></tr>
+      <tr><td class="grp">Google Покупки (безкоштовна видача)</td>
+        <td>Є: монітори, операційні столи, УХТ, світильники</td>
+        <td>Не бачили в жодному з 6 запитів</td>
+        <td>Є: монітори, функціональні ліжка</td></tr>
+      <tr><td class="grp">Тег Google Ads (AW-) на сайті</td>
+        <td>Немає. GTM-KMD5QZ34 + GA4</td>
+        <td>Немає. GTM-53N9M8B2 + GA4 з е-комерцією</td>
+        <td>Немає. Лише застарілий Universal Analytics</td></tr>
+      <tr><td class="grp">Facebook Pixel</td><td>Немає</td><td>Є</td><td>Є</td></tr>
+      <tr><td class="grp">Інше</td>
+        <td>Блог про ЕКГ, SpO2, дефібрилятори; відео з YouTube на картках</td>
+        <td>Instagram і Facebook; блог закинутий (останній запис квітень 2025)</td>
+        <td>YouTube-канал, Instagram, Facebook; новини про стоматологію</td></tr>
+    </tbody>
+  </table></div>
+  <h3>Хто насправді платить за покази поруч із Rodolit</h3>
+  <p>Пошук Google (Україна, українська мова), 4 листопада:</p>
+  <ul>
+    <li><b>«кольпоскоп купити»</b>: текстові оголошення Protech Solutions («оснастимо кабінет гінеколога під ключ») і MedExim (кольпоскопи Brightfield).</li>
+    <li><b>«кольпоскоп» у Покупках</b>: 15 із 16 рекламних карток належать Rodolit, ще одна techno-med, і це той самий KN-2200 за <span class="num">98 677</span> ₴.</li>
+    <li><b>«монітор пацієнта купити»</b>: MedExim.</li>
+    <li><b>«хірургічний світильник»</b>: Loran (loran.ua), понад 10 000 відвідувань сайту за місяць за даними Google.</li>
+    <li><b>«реабілітаційне обладнання»</b>: Briolight.</li>
+    <li>За запитами про ліжка, операційні столи, УХТ і гінекологічні крісла текстової реклами не було.</li>
+  </ul>
+  <p class="note">Це одна перевірка з одного браузера, а показ реклами залежить від часу, місця і людини. Точнішу картину дасть звіт «Аналітика аукціонів» у Google Ads: через API він для нашого акаунта недоступний, тому його треба вивантажити вручну з інтерфейсу.</p>
+  <p>Окремо: у пошукових запитах Rodolit за 30 днів трапляється «монітор пацієнта біомед вм800а» (22 покази, 2 кліки, 52 ₴). Хтось шукає модель Біомеда і бачить нас. YK-8000B дешевший за BM800A, тому такий трафік варто лишати.</p>
+</section>
+
+<section id="vydacha">
+  <h2>Що показує Google по наших запитах</h2>
+  <p>Перевірка 4 листопада: 8 запитів у звичайному пошуку і на вкладці «Покупки» (Україна, українська й російська мова). Після восьмого запиту Google попросив капчу, тому решту груп (світильники, крісла, УХТ, тренажери) зняти не вдалося.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Запит</th><th>Текстова реклама</th><th>Товарна реклама</th><th>Безкоштовна видача: хто вгорі</th></tr></thead>
+    <tbody>
+      <tr><td class="grp">кольпоскоп купити</td><td>MedExim, Protech Solutions</td><td>в цей раз немає; раніше того ж дня на «кольпоскоп» 15 із 16 карток Rodolit + techno-med</td><td>Prom, rh.ua, medmax; у Покупках KN-2200 продають Medservice Plus, vida-med, Epikriz, techno-med</td></tr>
+      <tr><td class="grp">відеокольпоскоп</td><td>MedExim (внизу сторінки)</td><td>немає</td><td>Меддент, Медтехінвест, OXYDOC; у Покупках Віола C6A HD <span class="num">193 404</span>, techno-med KN-2200 <span class="num">98 677</span></td></tr>
+      <tr><td class="grp">кольпоскоп купить украина</td><td>Protech Solutions</td><td>немає</td><td>OLX</td></tr>
+      <tr><td class="grp">монітор пацієнта купити</td><td>немає</td><td>немає</td><td><b>Біомед на 1-му місці</b>, далі Prom, epikriz; у Покупках Біомед BM1600 <span class="num">72 200</span></td></tr>
+      <tr><td class="grp">монитор пациента</td><td>МЕД ММ (med-mm.com.ua)</td><td>немає</td><td>Licarno</td></tr>
+      <tr><td class="grp">функціональне медичне ліжко</td><td>немає</td><td>немає</td><td>med1.ltd, Baldinelli, OSD; у Покупках дешеві ліжка від <span class="num">12 999</span></td></tr>
+      <tr><td class="grp">медичне ліжко з електроприводом</td><td>немає</td><td>немає</td><td>med1.ltd, Baldinelli, OLX, rh.ua</td></tr>
+      <tr><td class="grp">операційний стіл</td><td>немає</td><td>немає</td><td><b>Біомед на 1-му місці</b>, zavet.kiev.ua; у Покупках Біомед ET300B, MT300</td></tr>
+    </tbody>
+  </table></div>
+
+  <h3>Аналіз пошукової реклами</h3>
+  <ul>
+    <li><b>Конкуренція в текстовій рекламі слабка.</b> На 4 із 8 запитів оголошень немає зовсім, на решті 1–2 рекламодавці. Ні Біомед, ні Medigo, ні Віола в текстовій рекламі по наших товарах не з'являлися.</li>
+    <li><b>Головний платний конкурент по кольпоскопах: MedExim і Protech Solutions.</b> Вони обіцяють <span class="quote">«повний супровід: від консультації до запуску»</span>, «офіційна гарантія», «навчання для лікарів», «підберемо рішення під клініку та бюджет», додають кнопку дзвінка і швидкі посилання на заявку.</li>
+    <li><b>Біомед бере монітори й операційні столи безкоштовно</b>: він перший у звичайній видачі. Rodolit може обійти його лише рекламою, тому ці запити варто тримати в пошукових кампаніях.</li>
+    <li>По ліжках видача роздрібна (ліжка для догляду вдома за 13–40 тис. ₴). Лікарняні USI за 36–158 тис. ₴ на загальних запитах губляться серед них, тож у пошуку ліжок варто ставити уточнення «реанімаційне», «для лікарні», «інтенсивна терапія».</li>
+  </ul>
+
+  <h3>Аналіз товарної реклами</h3>
+  <ul>
+    <li>Блок рекламних товарів з'явився лише один раз, на запит «кольпоскоп»: там Rodolit займав 15 із 16 карток. На інших запитах блоку не було ні в кого, і за одну сесію не видно, чи Rodolit програє аукціон, чи Google просто не показав блок.</li>
+    <li><b>Той самий KN-2200 продають ще 4–5 магазинів</b>: techno-med від <span class="num">98 677</span>, ROZETKA <span class="num">126 987</span>, vida-med <span class="num">121 466</span>, Medservice Plus <span class="num">132 509</span>, Epikriz <span class="num">102 968</span>. Знижка Rodolit (портативний від <span class="num">95 013</span>) робить його найдешевшим, і це варто показувати.</li>
+    <li>Біомед і Віола є в безкоштовних товарних оголошеннях (монітори, столи, ліжка), тобто у них є Merchant Center. Платної товарної реклами від них ми не бачили.</li>
+  </ul>
+
+  <div class="shots">
+    <figure><a href="shots/s01_kolposkop_kupyty_search.jpg" target="_blank" rel="noopener"><img src="shots/s01_kolposkop_kupyty_search.jpg" alt="Видача Google за запитом кольпоскоп купити з рекламою MedExim і Protech" loading="lazy"></a><figcaption><b>«кольпоскоп купити»</b>: реклама MedExim і Protech Solutions</figcaption></figure>
+    <figure><a href="shots/s05_kolposkop_kupyty_shop.jpg" target="_blank" rel="noopener"><img src="shots/s05_kolposkop_kupyty_shop.jpg" alt="Google Покупки за запитом кольпоскоп купити" loading="lazy"></a><figcaption><b>«кольпоскоп купити», Покупки</b>: KN-2200 у інших магазинів</figcaption></figure>
+    <figure><a href="shots/s02_videokolposkop_search.jpg" target="_blank" rel="noopener"><img src="shots/s02_videokolposkop_search.jpg" alt="Видача за запитом відеокольпоскоп" loading="lazy"></a><figcaption><b>«відеокольпоскоп»</b>: MedExim унизу сторінки</figcaption></figure>
+    <figure><a href="shots/s06_videokolposkop_shop.jpg" target="_blank" rel="noopener"><img src="shots/s06_videokolposkop_shop.jpg" alt="Google Покупки за запитом відеокольпоскоп" loading="lazy"></a><figcaption><b>«відеокольпоскоп», Покупки</b>: Віола C6A HD, techno-med KN-2200</figcaption></figure>
+    <figure><a href="shots/s03_monitor_kupyty_search.jpg" target="_blank" rel="noopener"><img src="shots/s03_monitor_kupyty_search.jpg" alt="Видача за запитом монітор пацієнта купити, Біомед перший" loading="lazy"></a><figcaption><b>«монітор пацієнта купити»</b>: реклами немає, Біомед перший</figcaption></figure>
+    <figure><a href="shots/s04_monitor_kupyty_shop.jpg" target="_blank" rel="noopener"><img src="shots/s04_monitor_kupyty_shop.jpg" alt="Google Покупки за запитом монітор пацієнта купити" loading="lazy"></a><figcaption><b>«монітор пацієнта купити», Покупки</b>: Біомед BM1600, techno-med, Casada</figcaption></figure>
+    <figure><a href="shots/s09_operstil_search.jpg" target="_blank" rel="noopener"><img src="shots/s09_operstil_search.jpg" alt="Видача за запитом операційний стіл" loading="lazy"></a><figcaption><b>«операційний стіл»</b>: реклами немає, Біомед перший</figcaption></figure>
+    <figure><a href="shots/s10_operstil_shop.jpg" target="_blank" rel="noopener"><img src="shots/s10_operstil_shop.jpg" alt="Google Покупки за запитом операційний стіл" loading="lazy"></a><figcaption><b>«операційний стіл», Покупки</b>: Біомед ET300B і MT300</figcaption></figure>
+    <figure><a href="shots/s07_lizhko_search.jpg" target="_blank" rel="noopener"><img src="shots/s07_lizhko_search.jpg" alt="Видача за запитом функціональне медичне ліжко" loading="lazy"></a><figcaption><b>«функціональне медичне ліжко»</b>: реклами немає</figcaption></figure>
+    <figure><a href="shots/s08_lizhko_shop.jpg" target="_blank" rel="noopener"><img src="shots/s08_lizhko_shop.jpg" alt="Google Покупки за запитом функціональне медичне ліжко" loading="lazy"></a><figcaption><b>«функціональне медичне ліжко», Покупки</b>: домашні ліжка від 13 тис. ₴</figcaption></figure>
+  </div>
+</section>
+
+<section id="biblioteka">
+  <h2>Бібліотека реклами Google: що крутять конкуренти</h2>
+  <p>Центр прозорості реклами Google, регіон Україна. Тут видно текстові, графічні й відеооголошення, але не товарну рекламу. Для порівняння: у Rodolit там 31 оголошення.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Рекламодавець</th><th>Оголошень</th><th>Що рекламує і як</th></tr></thead>
+    <tbody>
+      <tr><td class="grp">Біомед</td><td class="num">4</td><td>Інфузійні насоси, FeNO, операційний стіл DC-2000 для С-дуги, дитячий пульсоксиметр. Покази 2–3 листопада. Прості тексти з характеристиками, без цін і пропозицій.</td></tr>
+      <tr><td class="grp">Віола</td><td class="num">4</td><td>Стоматологічні наконечники (липень 2026), а в листопаді 2025 банер, відео і реклама в Картах про відеокольпоскоп SmartEye II Plus. Зараз не активна.</td></tr>
+      <tr><td class="grp">Medigo</td><td class="num">0</td><td>Реклами в Google немає за весь час, у жодній країні.</td></tr>
+      <tr><td class="grp">MedExim</td><td class="num">44</td><td>Монітори пацієнта, кольпоскопи й відеоендоскопи Brightfield, УЗД, ШВЛ, автоклави, лазери. Тексти: «Офіційний дистриб'ютор», «Сервіс», «Швидка доставка», «Введення в експлуатацію», «Зв'язатись з менеджером».</td></tr>
+      <tr><td class="grp">Protech Solutions</td><td class="num">≈200</td><td>Найактивніший. Ліжка Givas, Famed, Vassilli, Saikang (<span class="quote">«офіційний дистриб'ютор з 2001 року»</span>), операційні столи Famed Optima XLine зі «спецпропозицією», УЗД GE з розстрочкою і тестом у шоурумі. Є текстові, графічні та адаптивні банери.</td></tr>
+      <tr><td class="grp">Loran (ТОВ «3-біт»)</td><td class="num">53</td><td>Хірургічні світильники, відеоендоскопія. Номер телефону прямо в заголовку, «монтаж за 1–2 дні», «гарантійне обслуговування».</td></tr>
+      <tr><td class="grp">Briolight</td><td class="num">1</td><td>Реабілітаційне обладнання власного виробництва, «18 типів вправ».</td></tr>
+    </tbody>
+  </table></div>
+  <ul>
+    <li><b>Що працює в чужих оголошеннях і чого бракує Rodolit:</b> статус «офіційний дистриб'ютор», введення в експлуатацію й навчання, розстрочка, тест обладнання перед покупкою, телефон у заголовку.</li>
+    <li><b>Protech і MedExim рекламуються по багатьох категоріях одразу</b> і крутять банери в КМС. Біомед, Віола і Medigo в Google майже не рекламуються: їх реальна сила в безкоштовній видачі.</li>
+  </ul>
+  <div class="shots">
+    <figure><a href="shots/t01_biomed_all.jpg" target="_blank" rel="noopener"><img src="shots/t01_biomed_all.jpg" alt="Усі оголошення Біомед у бібліотеці реклами" loading="lazy"></a><figcaption><b>Біомед</b>: усі 4 оголошення</figcaption></figure>
+    <figure><a href="shots/t02_biomed_dc2000.jpg" target="_blank" rel="noopener"><img src="shots/t02_biomed_dc2000.jpg" alt="Оголошення Біомед про операційний стіл DC-2000" loading="lazy"></a><figcaption><b>Біомед</b>: операційний стіл DC-2000, показ 3.11.2026</figcaption></figure>
+    <figure><a href="shots/t03_viola_all.jpg" target="_blank" rel="noopener"><img src="shots/t03_viola_all.jpg" alt="Усі оголошення Віоли" loading="lazy"></a><figcaption><b>Віола</b>: 4 оголошення, текст, банер, відео, Карти</figcaption></figure>
+    <figure><a href="shots/t04_viola_kolposkop.jpg" target="_blank" rel="noopener"><img src="shots/t04_viola_kolposkop.jpg" alt="Банер Віоли з відеокольпоскопом" loading="lazy"></a><figcaption><b>Віола</b>: банер відеокольпоскопа, листопад 2025</figcaption></figure>
+    <figure><a href="shots/t05_medigo_none.jpg" target="_blank" rel="noopener"><img src="shots/t05_medigo_none.jpg" alt="Medigo: оголошень не знайдено" loading="lazy"></a><figcaption><b>Medigo</b>: 0 оголошень</figcaption></figure>
+    <figure><a href="shots/t06_medexim_1.jpg" target="_blank" rel="noopener"><img src="shots/t06_medexim_1.jpg" alt="Оголошення MedExim, частина 1" loading="lazy"></a><figcaption><b>MedExim</b>: УЗД, ШВЛ, медобладнання</figcaption></figure>
+    <figure><a href="shots/t07_medexim_2.jpg" target="_blank" rel="noopener"><img src="shots/t07_medexim_2.jpg" alt="Оголошення MedExim, частина 2, монітор пацієнта" loading="lazy"></a><figcaption><b>MedExim</b>: монітор пацієнта, відеоендоскопія</figcaption></figure>
+    <figure><a href="shots/t08_protech_1.jpg" target="_blank" rel="noopener"><img src="shots/t08_protech_1.jpg" alt="Оголошення Protech Solutions, частина 1" loading="lazy"></a><figcaption><b>Protech</b>: ліжка, столи Famed, УЗД у розстрочку</figcaption></figure>
+    <figure><a href="shots/t09_protech_2.jpg" target="_blank" rel="noopener"><img src="shots/t09_protech_2.jpg" alt="Оголошення Protech Solutions, частина 2" loading="lazy"></a><figcaption><b>Protech</b>: «офіційний дистриб'ютор з 2001», УЗД GE</figcaption></figure>
+    <figure><a href="shots/t10_loran.jpg" target="_blank" rel="noopener"><img src="shots/t10_loran.jpg" alt="Оголошення Loran" loading="lazy"></a><figcaption><b>Loran</b>: світильники, телефон у заголовку</figcaption></figure>
+    <figure><a href="shots/t11_briolight.jpg" target="_blank" rel="noopener"><img src="shots/t11_briolight.jpg" alt="Оголошення Briolight" loading="lazy"></a><figcaption><b>Briolight</b>: реабілітаційне обладнання</figcaption></figure>
+  </div>
+</section>
+
+<section>
+  <h2>Сайти: умови і збір заявок</h2>
+  <div class="tbl"><table>
+    <thead><tr><th></th><th>Біомед</th><th>Medigo</th><th>Віола</th></tr></thead>
+    <tbody>
+      <tr><td class="grp">На ринку</td><td>з 1998</td><td>«12+ років у B2B»</td><td>власне виробництво з 1988, ~250 працівників</td></tr>
+      <tr><td class="grp">Каталог</td><td>~600–900 позицій</td><td>~8 200 товарів, ~440 брендів</td><td>~3 960 товарів</td></tr>
+      <tr><td class="grp">Доставка</td><td>Нова пошта, умов майже немає</td><td>безкоштовна від 30 000 ₴, власні водії</td><td>безкоштовна від 20 000 ₴, власний транспорт</td></tr>
+      <tr><td class="grp">Гарантія і сервіс</td><td>24 міс. на монітори, авторизований сервіс, тест перед покупкою</td><td>12–36 міс., реакція сервісу за 24 год, інсталяція, навчання</td><td>12 міс., сервісний центр з прайсом від 300 ₴/год</td></tr>
+      <tr><td class="grp">Лізинг</td><td>немає</td><td>є</td><td>немає</td></tr>
+      <tr><td class="grp">Тендери, Prozorro</td><td colspan="3">У жодного згадок не знайдено</td></tr>
+      <tr><td class="grp">Канали заявок</td><td>7 телефонів, кошик; без чату і зворотного дзвінка</td><td>0 800 безкоштовний, Viber, чат і зворотний дзвінок Binotel, консультація</td><td>зворотний дзвінок Binotel, купівля в 1 клік; без чату і месенджерів</td></tr>
+      <tr><td class="grp">Картки товарів</td><td>опис, характеристики, комплектація, відео; без PDF і відгуків</td><td>1–2 фото, характеристики бідні, без PDF і відео</td><td>1–3 фото, PDF у деяких, відео в деяких</td></tr>
+    </tbody>
+  </table></div>
+  <p>Сильні сторони Rodolit на цьому тлі: чат Kommo, Viber і Telegram, форми консультації та підбору обладнання, специфікації в PDF, блок «Допомога з тендерною документацією». Тендерну допомогу не пропонує жоден із трьох конкурентів, тож у B2B-оголошеннях вона може бути головною перевагою Rodolit.</p>
+</section>
+
+<section>
+  <h2>Що варто зробити в рекламі Rodolit</h2>
+  <ol class="todo">
+    <li><span><b>Кольпоскопи: показати знижку.</b> Додати до кампаній акцію (асет «Промоакція») зі знижкою ~23% і ціни. У Покупках Rodolit і так займає майже всі рекламні картки, тому головне зараз забрати текстову видачу в MedExim і Protech: окрема група «кольпоскоп купити / ціна» з оголошенням «KN-2200 від 95 013 ₴».</span></li>
+    <li><span><b>Medik (крісла, столи YA-03, світильники MK): конкурувати умовами.</b> Ціна така сама, як у Medigo, тож в оголошеннях і на картці мають бути доставка, монтаж, навчання персоналу, допомога з тендером, гарантія. Якщо Rodolit дає безкоштовну доставку або лізинг, це треба написати, бо в Medigo це вже є.</span></li>
+    <li><span><b>Монітори: писати ціну.</b> YK-8000B/C дешевші за аналоги Біомеда і Віоли, E15 на 36% дешевший, ніж у Medigo. Варто додати ціновий асет і заголовки «від 32 651 ₴».</span></li>
+    <li><span><b>Ліжка USI: не боротися ціною.</b> Гроші вести на USI-3001 з вагами (158 000 ₴ проти 385 000 ₴ у Medigo) і на реанімаційні моделі, а дешеві USI-908 і USI-984 у Покупках програватимуть ліжкам Біомеда й Віоли. Позиціонування: реанімація та інтенсивна терапія для лікарень.</span></li>
+    <li><span><b>УХТ LGT-2500S: пояснювати ціну.</b> У конкурентів апарати від 76 000 ₴, тобто Rodolit у 3–6 разів дорожчий. Без аргументів (клас апарата, клінічне застосування, сервіс) ця ставка з'їдає бюджет: за 14 днів 858 ₴ і 1 конверсія.</span></li>
+    <li><span><b>Реабілітаційні тренажери: ніша вільна від цих трьох.</b> Але LGT-5100D за 14 днів узяв близько 1 480 ₴ без жодної конверсії. Проблема не в конкурентах, а в попиті чи сторінці, тож це варто перевірити окремо.</span></li>
+    <li><span><b>Посилити тексти оголошень.</b> Додати те, що конкуренти вже пишуть: «офіційний дистриб'ютор» (якщо це так для Medik, USI, KN-2200), введення в експлуатацію і навчання персоналу, допомогу з тендером, розстрочку чи лізинг, якщо вони є. Підключити асет дзвінка і швидкі посилання на «Отримати КП».</span></li>
+    <li><span><b>Монітори й операційні столи тримати в пошуку.</b> Тут Біомед перший у безкоштовній видачі, а реклами від інших майже немає, тож показ над ним коштує недорого.</span></li>
+    <li><span><b>Розширити список конкурентів.</b> Для моніторингу додати MedExim, Protech Solutions, Loran, Briolight і techno-med: саме вони зараз платять за покази по наших товарах. Вивантажити «Аналітику аукціонів» з Google Ads за 30 днів по кожній кампанії.</span></li>
+  </ol>
+</section>
+
+<footer>
+  <p>Джерела: публічні сторінки biomed.ua, medigo.ua, viola.net.ua (код сторінок, GTM-контейнери, ціни станом на 04.11.2026); Центр прозорості реклами Google, регіон Україна; ручна перевірка видачі Google; Google Ads Rodolit (406-165-1760) за 7, 14 і 30 днів; фід Rodolit від 27.10.2026.</p>
+  <p>Не перевірено: Merchant Center конкурентів, їхні платні товарні оголошення (Центр прозорості їх не показує), участь у Prozorro, швидкість сайтів. Видачу Google знято з одного браузера за одну сесію; після 8 запитів Google вимагав капчу, тому світильники, гінекологічні крісла, УХТ і тренажери у видачі не перевірені.</p>
+</footer>
+</div>
+
+</body>
+</html>
